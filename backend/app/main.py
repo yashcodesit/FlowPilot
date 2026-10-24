@@ -7,6 +7,7 @@ from app.routes.workflows import router as workflows_router
 from app.routes.tasks import router as tasks_router
 from app.routes.dependencies import router as dependencies_router
 from app.routes.scheduling import router as scheduling_router
+from app.routes.generation import router as generation_router
 
 app = FastAPI(
     title="FlowPilot API",
@@ -18,6 +19,7 @@ app.include_router(workflows_router)
 app.include_router(tasks_router)
 app.include_router(dependencies_router)
 app.include_router(scheduling_router)
+app.include_router(generation_router)
 
 @app.get("/")
 def root():
